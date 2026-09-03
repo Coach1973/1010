@@ -515,6 +515,29 @@ button, a, input { -webkit-tap-highlight-color: transparent; }
 .hero .eyebrow,
 .film .eyebrow { color: rgba(244,239,227,.82); }
 .contact .body-copy { color: rgba(255,255,255,.68); }
+.payment-info {
+  width: min(45rem, 100%);
+  margin: clamp(2rem, 5vw, 3.5rem) 0 0;
+  padding: 1.4rem 1.6rem;
+  border: 1px solid rgba(255,255,255,.22);
+  border-radius: 4px;
+  background: rgba(255,255,255,.05);
+}
+.payment-info__title {
+  margin-bottom: .6rem;
+  color: var(--gold);
+  font-family: var(--sans);
+  font-size: .8125rem;
+  font-weight: 500;
+  letter-spacing: .16em;
+}
+.payment-info__row {
+  color: rgba(255,255,255,.82);
+  font-family: var(--sans);
+  font-size: .9375rem;
+  line-height: 1.9;
+  letter-spacing: .02em;
+}
 .subscribe { width: min(45rem, 100%); margin: clamp(3rem, 7vw, 6rem) 0; }
 .subscribe label {
   display: block;
