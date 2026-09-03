@@ -56,7 +56,7 @@ button, a, input { -webkit-tap-highlight-color: transparent; }
 
 /* ── Header ── */
 .site-header {
-  position: absolute;
+  position: fixed;
   z-index: 20;
   top: 0;
   left: 0;
@@ -67,15 +67,23 @@ button, a, input { -webkit-tap-highlight-color: transparent; }
   justify-content: space-between;
   padding: 0 var(--gutter);
   color: white;
-  border-bottom: 1px solid var(--light-line);
+  border-bottom: 1px solid transparent;
+  background: transparent;
+  transition: background .25s ease, border-color .25s ease, backdrop-filter .25s ease;
+}
+.site-header.scrolled {
+  background: rgba(47,59,41,.92);
+  border-bottom-color: var(--light-line);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
 }
 .brand {
   display: inline-flex;
   align-items: center;
   gap: .7rem;
   font-family: var(--serif);
-  letter-spacing: .14em;
-  font-size: .875rem;
+  letter-spacing: .1em;
+  font-size: 32px;
   font-weight: 400;
 }
 .brand__mark {
@@ -86,13 +94,14 @@ button, a, input { -webkit-tap-highlight-color: transparent; }
   border: 1px solid currentColor;
   border-radius: 50%;
   font-size: .875rem;
+  flex-shrink: 0;
 }
 .site-nav {
   display: flex;
   align-items: center;
   gap: clamp(1.25rem, 3vw, 3rem);
-  font-size: .8125rem;
-  letter-spacing: .18em;
+  font-size: 32px;
+  letter-spacing: .1em;
   font-family: var(--sans);
 }
 .site-nav a { position: relative; padding: .75rem .1rem; }

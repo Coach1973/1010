@@ -3,9 +3,14 @@ document.documentElement.classList.add("js");
 const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
 const navToggle = document.querySelector(".nav-toggle");
 const nav = document.querySelector(".site-nav");
+const siteHeader = document.querySelector(".site-header");
 const filmSection = document.querySelector(".film");
 const video = document.querySelector('[data-slot="brand_belief_film"]');
 const filmControl = document.querySelector(".film__control");
+
+window.addEventListener("scroll", () => {
+  siteHeader.classList.toggle("scrolled", window.scrollY > 40);
+}, { passive: true });
 
 function closeNavigation() {
   navToggle.setAttribute("aria-expanded", "false");
